@@ -32,22 +32,24 @@ There are 4 main methods: `selectOS`, `selectPlan`, `selectFacility`, and `creat
 `func selectOS(token string, distro string)`
 
     This routine uses `/operating-systems` API to retrieve a list of available operation systems. 
-    In order to pick an operating-system to use, I chose `distro` as the filter.
+    It filters and select an operating-system by using `distro` field.
     
  `func selectPlan(token, projID string, class string)`
  
-    This routine uses `/projects/<projID>/plans` API to retrieve a list of available plans associated 
-    with the project.  To pick which plan to use, I chose `class` as the filter.
+    This routine uses `/projects/{projID}/plans` API to retrieve a list of available plans associated 
+    with the project `{projID}`.  It filters and selects a plan by using `class` field.
     
  `func selectFacility(token, projID string, feature string)`
  
-    This routine uses `/projects/<projID>/facilities` API to retrieve a list of avialable facilities
-    associated with the project with ID: `projID`. To pick facilities, I chose `feature` as the filter.
+    This routine uses `/projects/{projID}/facilities` API to retrieve a list of avialable facilities
+    belong to project `{projID}`. It filters and selects a facility by using `feature` field. I choose
+    to use single feature to select a facility for simplicity. However, it is possible to enhance to
+    support multiple features filtering.
     
  `func createDevice(token, projID string, os *OS, facility *Facility, plan *Plan)`
  
-    This routine uses `/projects/<projID>/devices` API with `POST` method to create a device. It uses
-    fields from selected operating-system, plan, and facility data as message input.
+    This routine uses `/projects/{projID}/devices` API with `POST` method to create a device. It uses
+    data from selected operating-system, plan, and facility to orchestrate the launch.
     
 ### Suggestion
 
