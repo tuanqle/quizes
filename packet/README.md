@@ -76,6 +76,10 @@ corrupted OS, etc. would triggered the condition. To protect from this scenario,
 * In the case watchdog occurs, rollback the system's state (forced deprovisioned new device)
 * Record any log that can help debug the failure
 
+#### Unit Test
+
+The program is lacking unit-test. 
+
 ### Suggestions
 
 * `/plans` API provides hardware architecture [AMD or ARM]  in description.
