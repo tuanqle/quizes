@@ -65,7 +65,11 @@ the program, instead of using hardcoded values, I would automated the process:
 list of available `plans` with matching `value`
 3. Iterate through the `plans` list in step 2 and use `feature` field to retrieve a list of available `facilities`
 4. Iterate through the `facilities` list and attempt to create device with `os`,`plans`, and `facility`
-5. If unsuccessful, repeat from step 2 until we exhausted all the posibility.
+5. If unsuccessful, repeat from step 2 until we exhausted all possibilities.
+
+#### Facility filtering
+
+Use multiple `features` to select a `facility`
 
 #### Handle device creation failure
 
