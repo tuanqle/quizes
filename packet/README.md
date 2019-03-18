@@ -69,8 +69,8 @@ list of available `plans` with matching `value`
 
 #### Handle device creation failure
 
-Current program can run indefinitely waiting for device creation to complete. Scenarios such as: PXE boot failure,
-corrupted OS, etc. would triggered  this. To protect from this scenario:
+Current program can run indefinitely waiting for device provisioning. Scenarios such as: PXE boot failure,
+corrupted OS, etc. would triggered the condition. To protect from this scenario, I would add a watchdog.
 
 * Add a watchdog to recover from indefinite provisioning.
 * In the case watchdog occurs, rollback the system's state (forced deprovisioned new device)
