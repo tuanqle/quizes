@@ -51,7 +51,32 @@ There are 4 main methods: `selectOS`, `selectPlan`, `selectFacility`, and `creat
     This routine uses `/projects/{projID}/devices` API with `POST` method to create a device. It uses
     data from selected operating-system, plan, and facility to orchestrate the launch.
     
-### Suggestion
+### Improvements
+
+This section describew suggested improvementw to the current program.
+
+#### Automate the selection
+
+Current program uses hardcoded values to demonstrate launching and tearing down a machine. To further improve
+the program, instead of using hardcoded values, I would automated the process:
+
+1. Get a list of operating-system which has `provisionable_on` field set.
+2. Iterate through the `operating-system` list from step 1 and for each `value` in `provisionable_on`, retrieves a
+list of available `plans` with matching `value`
+3. Iterate through the `plans` list in step 2 and use `feature` field to retrieve a list of available `facilities`
+4. Iterate through the `facilities` list and attempt to create device with `os`,`plans`, and `facility`
+5. If unsuccessful, repeat from step 2 until we exhausted all the posibility.
+
+#### Handle device creation failure
+
+Current program can run indefinitely waiting for device creation to complete. Scenarios such as: PXE boot failure,
+corrupted OS, etc. would triggered  this. To protect from this scenario:
+
+* Add a watchdog to recover from indefinite provisioning.
+* In the case watchdog occurs, rollback the system's state (forced deprovisioned new device)
+* Record any log that can help debug the failure
+
+### Suggestions
 
 * `/plans` API provides hardware architecture [AMD or ARM]  in description.
   Suggest adding a new field: `architecture`
