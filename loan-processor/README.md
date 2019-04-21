@@ -4,31 +4,31 @@ The next `task` is based on client's responses.
 
 ### Prerequisite
 This program is written using GOlang. Download the lastest `GO` compiler using the link below
-    ```
+    
     https://golang.org/dl/
-    ```
+    
 
 ### Installation
 Untar the archive to current working directory
-    ```
+   
     tar xvzf loan-processor.tar.gz
-    ```
+  
 
 Source code can also be found here
-    ```
+ 
     https://github.com/tuanqle/quizes/loan-processor
-    ```
+
 
 ### Compiling
-    ```
+
     cd loan-processor
     go build
-    ```
+
 
 ### Execution
-    ```
+
     ./loan-processor
-    ```
+
 
 #### What it does?
 
@@ -144,3 +144,6 @@ This section describes possible enhancements that can be done for the program.
     The program is designed with `context` which can be extended to allow concurrency
     with API endpoints.  Each `context` would be independent for concurrency access.
     It also allows different work-flow performed by different clients through API endpoint.
+
+    `Task executor improvement`
+    A mechanism to notify caller of task completion in 'bg' mode.
