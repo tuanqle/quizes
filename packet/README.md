@@ -53,7 +53,7 @@ There are 4 main methods: `selectOS`, `selectPlan`, `selectFacility`, and `creat
     
 ### Improvements
 
-This section describew suggested improvementw to the current program.
+This section describe suggested improvement to the current program.
 
 #### Automate the selection
 
