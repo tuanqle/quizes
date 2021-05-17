@@ -1,6 +1,7 @@
 This is a command-line program demonstrating the `Water Jug Riddle` solution.
+
 `Water Jug Riddle` in simple term is by using only an X-gallon and Y-gallon jug (no third jug),
-measure Z gallons of water.
+to measure Z-gallon of water.
 
 ### Installation
 
