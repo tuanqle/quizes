@@ -24,9 +24,9 @@ to measure Z-gallon of water.
 #### What it does?
 
 As the program starts, it asks user to input 3 integer values for X, Y, and Z which represent
-number of gallons for: Jug X, Jug Y, and the measure Z gallon. It validates these values for
-errors. It uses recursive algorithm to find the measurment Z gallons. If found, it will out
-steps takes to derive the result.
+number of gallons for: Jug X, Jug Y, and the measurement Z-gallon. It validates these values
+for errors. It uses recursive algorithm to find the measurment Z-gallon. If found, it will out
+steps to derive the result.
 
 ### Contents
 
